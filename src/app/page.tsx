@@ -5,8 +5,8 @@ export default async function Home() {
 
   const postHtml = data.map((post,i) => {
     let featuredImage = ''
-    if (post.featured_image) {
-      featuredImage = post.featured_image
+    if (post.cover_art) {
+      featuredImage = post.cover_art
     } else if (post.the_post_thumbnail) {
       featuredImage = post.the_post_thumbnail
     } else if (post.slide) {
@@ -14,7 +14,7 @@ export default async function Home() {
     }
     return(
         <div key={post.id} className="flex flex-col gap-3">
-          <img className="size-60 rounded-xl mx-auto" src={featuredImage} alt={post.title.rendered} />
+          <Image className="size-60 rounded-xl mx-auto" src={featuredImage} alt={post.title.rendered} width="200" height="200" />
           <p className="text-black text-center">{post.title.rendered}</p>
         </div>
     )

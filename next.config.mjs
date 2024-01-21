@@ -1,4 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'hiraya.test',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+    ],
+  }
+};
 
 export default nextConfig;
