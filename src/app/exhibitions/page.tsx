@@ -4,7 +4,7 @@ import { getExhibitionArchive } from '@/services/exhibitions'
 export default async function ExhibitionArchive() {
 	const data = await getExhibitionArchive()
 
-    const postHtml = data.map((post,i) => {
+    const postHtml = data.map((post:any,i:number) => {
         let featuredImage = ''
         if (post.cover_art) {
         featuredImage = post.cover_art

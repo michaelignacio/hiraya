@@ -4,10 +4,10 @@ import { getExhibitionSingle } from '@/services/exhibitions'
 
 export default async function ExhibitionSingle({ params }: { params: { slug: string } }) {
 	const post = await getExhibitionSingle(params.slug)
-  const allSlides = Object.values(post.slide).map((slideItem, i) => {
-    const slideDetails = Object.values(slideItem)
+  const allSlides = Object.values(post.slide || {}).map((slideItem, i) => {
+    const slideDetails = Object.values(slideItem || {})
     return (
-        <img key={i} className="size-20 rounded-xl" src={slideDetails[0]} alt={post.title.rendered} width="100" height="100" />
+        <Image key={i} className="size-20 rounded-xl" src={slideDetails[0]} alt={post.title.rendered} width="100" height="100" />
     )
   })
 

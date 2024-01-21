@@ -3,7 +3,7 @@ import Image from "next/image";
 export default async function Home() {
   const data = await getExhibitions()
 
-  const postHtml = data.map((post,i) => {
+  const postHtml = data.map((post:any,i:number) => {
     let featuredImage = ''
     if (post.cover_art) {
       featuredImage = post.cover_art
