@@ -23,14 +23,14 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
           </section>
           <section className="col-span-7">
             <h1 className="text-3xl">{post.title.rendered}</h1>
-            <p>This exhibition was held in Hiraya Gallery on {post.start_date}{post.end_date && ' to ' + post.end_date}.</p>
+            <p>{post.start_date}{post.end_date && ' - ' + post.end_date}.</p>
           </section>
         </article>
 			)}
 			{!post && (
 				<>
 					<h1>404</h1>
-					<p>Post not found.</p>
+					<p>Exhibition not found.</p>
 				</>
 			)}
 		</main>

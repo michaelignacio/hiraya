@@ -14,6 +14,12 @@ const nextConfig = {
         port: '',
         pathname: '/wp-content/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.hiraya.com',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
     ],
   }
 };
