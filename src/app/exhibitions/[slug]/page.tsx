@@ -16,14 +16,15 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
 			{post && (
         <article className="grid grid-cols-12 gap-10">
           <section className="col-span-5">
-            <Image className="w-full rounded-xl ms-auto" src={post.cover_art} alt={post.title.rendered} width="500" height="200" />
+            <Image className="rounded-xl" src={post.cover_art} alt={post.title.rendered} width="500" height="200" />
             <section className="flex mt-5 gap-3 flex-wrap">
               {allSlides}
             </section>
           </section>
-          <section className="col-span-7">
+          <section className="col-span-7 flex flex-col">
             <h1 className="text-3xl">{post.title.rendered}</h1>
-            <p>{post.start_date}{post.end_date && ' - ' + post.end_date}.</p>
+            <p>{post.artists && post.artists.join(', ')}</p>
+            <p className="mt-auto">{post.start_date}{post.end_date && ' - ' + post.end_date}</p>
           </section>
         </article>
 			)}
