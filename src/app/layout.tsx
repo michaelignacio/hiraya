@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="container mx-auto flex justify-center md:justify-between py-5">
+        <nav className="container max-w-5xl mx-auto flex justify-center md:justify-between py-5">
           <Link href="/">
             <Image src="https://www.hiraya.com/wp-content/uploads/2015/07/hiraya_logo.jpg" width="323" height="60" />
           </Link>
