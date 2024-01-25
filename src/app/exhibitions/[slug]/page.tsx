@@ -13,15 +13,16 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
   })
 
 	return (
-		<main className="container mx-auto">
+		<main className="container mx-auto px-5 md:px-0">
 			{post && (
         <article className="grid grid-cols-12 md:gap-16">
           <section className="col-span-12 md:col-span-6">
-            {/* <Image className="rounded-xl" src={post.cover_art ? post.cover_art : post.the_post_thumbnail} alt={post.title.rendered} width="500" height="200" /> */}
-            {/* <section className="flex mt-5 gap-3 flex-wrap"> */}
+            {post.slide && 
             <section className="mt-5">
               <Gallery post={post} />
-            </section>
+            </section>}
+            {!post.slide && 
+            <Image className="mx-auto max-h-[40rem] max-w-[40rem] object-contain" src={post.cover_art ? post.cover_art : post.the_post_thumbnail} alt={post.title.rendered} width="500" height="200" />}
           </section>
           <section className="col-span-12 md:col-span-6 flex flex-col">
             <h1 className="text-3xl">{post.title.rendered}</h1>
