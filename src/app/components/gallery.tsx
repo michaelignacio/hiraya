@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -19,7 +20,12 @@ export default function Gallery({ post } : { post: any}) {
     const slideDetails = Object.values(slideItem || {})
     return (
       <SwiperSlide key={i}>
-        <img src={slideDetails[0]} alt={post.title.rendered} />
+        <Image 
+          className="mx-auto" 
+          src={slideDetails[0]} alt={post.title.rendered} 
+          width="736"
+          height="100"
+        />
       </SwiperSlide>
     )
   })
@@ -27,7 +33,13 @@ export default function Gallery({ post } : { post: any}) {
     const slideDetails = Object.values(slideItem || {})
     return (
       <SwiperSlide key={i}>
-        <img className="rounded-xl size-20" src={slideDetails[0]} alt={post.title.rendered} />
+        <Image 
+          className="rounded-xl size-20" 
+          src={slideDetails[0]} 
+          alt={post.title.rendered}
+          width="100"
+          height="100"
+        />
       </SwiperSlide>
     )
   })
@@ -35,7 +47,7 @@ export default function Gallery({ post } : { post: any}) {
     <>
       <Swiper
           style={{
-            '--swiper-navigation-color': '#fff',
+            '--swiper-navigation-color': '#000',
             '--swiper-pagination-color': '#fff',
           }}
           loop={true}
