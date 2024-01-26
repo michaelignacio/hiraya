@@ -8,22 +8,22 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
 	return (
 		<main className="container mx-auto px-5 md:px-0">
 			{post && (
-        <article className="grid grid-cols-12 md:gap-16">
-          <section className="col-span-12 md:col-span-6">
+        <article className="grid grid-cols-12 gap-5 md:gap-16">
+          <section className="col-span-12 md:col-span-6 order-2 md:order-1">
             {post.slide && 
             <section className="mt-5">
               <Gallery post={post} />
             </section>}
             {!post.slide && 
             <Image 
-              className="mx-auto max-h-[40rem] max-w-[40rem] object-contain" 
+              className="mx-auto max-h-[40rem] w-full md:max-w-[40rem] object-contain" 
               src={post.cover_art} 
               alt={post.title.rendered} 
               width="500" 
               height="200" />
             }
           </section>
-          <section className="col-span-12 md:col-span-6 flex flex-col">
+          <section className="col-span-12 md:col-span-6 flex flex-col order-1 md:order-2 gap-3">
             <h1 className="text-3xl">{post.title.rendered}</h1>
             <p>{post.artists && post.artists.join(', ')}</p>
             <p>{post.venue}</p>
