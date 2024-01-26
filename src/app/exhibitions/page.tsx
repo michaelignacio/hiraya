@@ -7,11 +7,11 @@ export default async function ExhibitionArchive() {
     const postHtml = data.map((post:any,i:number) => {
       let featuredImage = ''
       if (post.cover_art) {
-      featuredImage = post.cover_art
+        featuredImage = post.cover_art
       } else if (post.the_post_thumbnail) {
-      featuredImage = post.the_post_thumbnail
+        featuredImage = post.the_post_thumbnail
       } else if (post.slide) {
-      featuredImage = post.slide[1][0]
+        featuredImage = post.slide[1][0]
       }
       return(
         <div key={post.id} className="flex flex-col gap-3">

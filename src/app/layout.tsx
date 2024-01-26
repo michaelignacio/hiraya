@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <nav className="container mx-auto flex justify-center md:justify-between py-5">
           <Link href="/">
-            <Image src="https://www.hiraya.com/wp-content/uploads/2015/07/hiraya_logo.jpg" width="323" height="60" />
+            <Image src="https://www.hiraya.com/wp-content/uploads/2015/07/hiraya_logo.jpg" width="323" height="60" alt="Hiraya logo" />
           </Link>
           <ul className="flex gap-5 items-center">
             <Link href="/about">About Us</Link>

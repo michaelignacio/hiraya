@@ -29,7 +29,7 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
             <p>{post.artists && post.artists.join(', ')}</p>
             <p>{post.venue}</p>
             <p>{post.start_date}{post.end_date && ' - ' + post.end_date}</p>
-            {post.notes && <div dangerouslySetInnerHTML={{ __html: post.notes }} />}
+            {post.notes && <div className="my-5" dangerouslySetInnerHTML={{ __html: post.notes }} />}
           </section>
         </article>
 			)}

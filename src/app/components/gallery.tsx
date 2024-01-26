@@ -15,7 +15,7 @@ import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 export default function Gallery({ post } : { post: any}) {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const allSlides = Object.values(post.slide || {}).map((slideItem, i) => {
     const slideDetails = Object.values(slideItem || {})
     return (
