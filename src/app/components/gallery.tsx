@@ -18,7 +18,7 @@ export default function Gallery({ post } : { post: any}) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const allSlides = Object.values(post.slide || {}).map((slideItem, i) => {
     const slideDetails = Object.values(slideItem || {})
-    const slideSrc = slideDetails[0].replace('http://localhost/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    const slideSrc = slideDetails[0].replace('http://hiraya.comt/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
     return (
       <SwiperSlide key={i} id={'mainSlide'+i}>
         <Image 
@@ -34,7 +34,7 @@ export default function Gallery({ post } : { post: any}) {
   })
   const allThumbs = Object.values(post.slide || {}).map((slideItem, i) => {
     const slideDetails = Object.values(slideItem || {})
-    const slideSrc = slideDetails[0].replace('http://localhost/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    const slideSrc = slideDetails[0].replace('http://hiraya.comt/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
     return (
       <SwiperSlide key={i} id={'thumbSlide'+i}>
         <Image 
