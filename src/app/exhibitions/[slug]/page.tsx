@@ -8,8 +8,14 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
 	return (
 		<main className="container mx-auto px-5 md:px-0">
 			{post && (
-        <article className="grid grid-cols-12 gap-5 md:gap-16">
-          <section className="col-span-12 md:col-span-6 order-2 md:order-1">
+        <article className="grid grid-cols-12 md:gap-10">
+          <section className="col-span-12 text-center">
+            <h1 className="text-2xl font-bold">{post.title.rendered}</h1>
+            <p className="italic mb-3">{post.start_date}{post.end_date && ' - ' + post.end_date}</p>
+            <p>{post.artists && post.artists.join(', ')}</p>
+            <p>{post.venue}</p>
+          </section>
+          <section className="col-span-12 md:col-span-6">
             {post.slide && 
             <section className="mt-5">
               <Gallery post={post} />
@@ -23,11 +29,7 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
               height="200" />
             }
           </section>
-          <section className="col-span-12 md:col-span-6 flex flex-col order-1 md:order-2 gap-3">
-            <h1 className="text-3xl">{post.title.rendered}</h1>
-            <p>{post.artists && post.artists.join(', ')}</p>
-            <p>{post.venue}</p>
-            <p>{post.start_date}{post.end_date && ' - ' + post.end_date}</p>
+          <section className="col-span-12 md:col-span-6 flex flex-col">
             {post.notes && <div className="my-5" dangerouslySetInnerHTML={{ __html: post.notes }} />}
           </section>
         </article>
