@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image';
-import { getExhibitionSingle } from '@/services/exhibitions'
+import { getLocalExhibitionSingle } from '@/services/exhibitions'
 import Gallery from '../../components/gallery'
 
 export default async function ExhibitionSingle({ params }: { params: { slug: string } }) {
-	const post = await getExhibitionSingle(params.slug)
-
+	const post = await getLocalExhibitionSingle(params.slug)
 	return (
 		<main className="container mx-auto px-5 md:px-0">
 			{post && (
@@ -16,7 +15,13 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
               <Gallery post={post} />
             </section>}
             {!post.slide && 
-            <Image className="mx-auto max-h-[40rem] max-w-[40rem] object-contain" src={post.cover_art ? post.cover_art : post.the_post_thumbnail} alt={post.title.rendered} width="500" height="200" />}
+            <Image 
+              className="mx-auto max-h-[40rem] max-w-[40rem] object-contain" 
+              src={post.cover_art} 
+              alt={post.title.rendered} 
+              width="500" 
+              height="200" />
+            }
           </section>
           <section className="col-span-12 md:col-span-6 flex flex-col">
             <h1 className="text-3xl">{post.title.rendered}</h1>

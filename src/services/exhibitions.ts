@@ -1,4 +1,5 @@
 import { EXHIBITIONS_ENDPOINT, EXHIBITIONS_ENDPOINT_PAGE2 } from './endpoints'
+import localData from '../app/data.json'
 
 export const getExhibitionArchive = async () => {
 	const response = await fetch(EXHIBITIONS_ENDPOINT, {
@@ -17,6 +18,17 @@ export const getExhibitionSingle = async (slug: string) => {
 		next: { revalidate: 60 },
 	})
 	const data = await response.json()
+	if (data.length > 0) {
+		return data[0]
+	} else {
+		return null
+	}
+}
+
+export const getLocalExhibitionSingle = async (slug: string) => {
+	const data = localData.filter(obj => {
+		return obj.slug == slug
+	})
 	if (data.length > 0) {
 		return data[0]
 	} else {
