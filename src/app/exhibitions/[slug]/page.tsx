@@ -5,12 +5,6 @@ import Gallery from '../../components/gallery'
 
 export default async function ExhibitionSingle({ params }: { params: { slug: string } }) {
 	const post = await getExhibitionSingle(params.slug)
-  const allSlides = Object.values(post.slide || {}).map((slideItem, i) => {
-    const slideDetails = Object.values(slideItem || {})
-    return (
-      <Image key={i} className="size-20 rounded-xl" src={slideDetails[0]} alt={post.title.rendered} width="100" height="100" />
-    )
-  })
 
 	return (
 		<main className="container mx-auto px-5 md:px-0">

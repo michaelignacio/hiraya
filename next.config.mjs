@@ -20,6 +20,12 @@ const nextConfig = {
         port: '',
         pathname: '/wp-content/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'hiraya.s3.ap-southeast-2.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   }
 };

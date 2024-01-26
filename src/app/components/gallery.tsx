@@ -18,11 +18,12 @@ export default function Gallery({ post } : { post: any}) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const allSlides = Object.values(post.slide || {}).map((slideItem, i) => {
     const slideDetails = Object.values(slideItem || {})
+    const slideSrc = slideDetails[0].replace('http://localhost/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
     return (
       <SwiperSlide key={i} id={'mainSlide'+i}>
         <Image 
           className="mx-auto my-auto max-h-[80vh] md:max-h-[40rem] md:max-w-[40rem] object-contain" 
-          src={slideDetails[0]} alt={post.title.rendered} 
+          src={slideSrc} alt={post.title.rendered} 
           width="736"
           height="100"
           onError={() => document.getElementById('mainSlide'+i)!.remove()}
@@ -33,11 +34,12 @@ export default function Gallery({ post } : { post: any}) {
   })
   const allThumbs = Object.values(post.slide || {}).map((slideItem, i) => {
     const slideDetails = Object.values(slideItem || {})
+    const slideSrc = slideDetails[0].replace('http://localhost/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
     return (
       <SwiperSlide key={i} id={'thumbSlide'+i}>
         <Image 
           className="rounded-xl size-14 md:size-20" 
-          src={slideDetails[0]} 
+          src={slideSrc} 
           alt={post.title.rendered}
           width="100"
           height="100"
