@@ -31,6 +31,14 @@ export default function RootLayout({
         </nav>
         {children}
       </body>
+
+      <ul className="gap-5 mt-10 flex justify-center">
+        <Link className="underline" href="/">Home</Link>
+        <Link className="underline" href="/about">About Us</Link>
+        <Link className="underline" href="/exhibitions">Exhibitions</Link>
+        <Link className="underline" href="/contact">Contact Us</Link>
+      </ul>
+      <p className="text-center mb-10 mt-5">© 2024 Hiraya Gallery. All Rights Reserved.</p>
     </html>
   );
 }

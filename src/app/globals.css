@@ -31,3 +31,18 @@ body {
     text-wrap: balance;
   }
 }
+
+.post-notes span {
+  color: #000!important;
+  font-family: unset!important;
+  font-size: unset!important;
+}
+
+.post-notes p {
+  margin-left: unset!important;
+  text-align: left!important;
+}
+
+.post-notes b {
+  font-weight: normal!important;
+}
