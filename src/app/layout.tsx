@@ -24,7 +24,7 @@ export default function RootLayout({
             <Image src="https://www.hiraya.com/wp-content/uploads/2015/07/hiraya_logo.jpg" width="323" height="60" alt="Hiraya logo" />
           </Link>
           <ul className="gap-5 items-center hidden md:flex">
-            <Link href="/about">About Us</Link>
+            <Link href="/">About Us</Link>
             <Link href="/exhibitions">Exhibitions</Link>
             <Link href="/contact">Contact Us</Link>
           </ul>
@@ -33,8 +33,7 @@ export default function RootLayout({
       </body>
 
       <ul className="gap-5 mt-10 flex justify-center">
-        <Link className="underline" href="/">Home</Link>
-        <Link className="underline" href="/about">About Us</Link>
+        <Link className="underline" href="/">About Us</Link>
         <Link className="underline" href="/exhibitions">Exhibitions</Link>
         <Link className="underline" href="/contact">Contact Us</Link>
       </ul>
