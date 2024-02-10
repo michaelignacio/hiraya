@@ -14,19 +14,19 @@ export default async function ExhibitionArchive() {
       noImage = true
     }
     return(
-      <div key={post.id} className="flex flex-col gap-3">
+      <div key={post.id} className="flex flex-col">
           <a href={`exhibitions/` + post.slug}>
-              <Image className={!noImage ? "size-40 md:size-60 rounded-xl mx-auto object-cover" : "size-40 md:size-60 rounded-xl mx-auto p-16 object-contain"}  src={featuredImage} alt={post.title.rendered} width="200" height="200" />
-              <p className="text-center mt-4">{post.title.rendered}</p>
+              <Image className={!noImage ? "size-24 md:size-60 rounded-xl mx-auto object-cover" : "size-40 md:size-60 rounded-xl mx-auto p-16 object-contain"}  src={featuredImage} alt={post.title.rendered} width="200" height="200" />
+              <p className="text-center text-xs md:text-base mt-3">{post.title.rendered}</p>
           </a>
       </div>
     )
   })
   
 	return (
-    <div className="py-10">
+    <div className="md:py-10">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 px-5 px-md-0">
+        <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 px-5 px-md-0">
           {postHtml}
         </div>
       </div>

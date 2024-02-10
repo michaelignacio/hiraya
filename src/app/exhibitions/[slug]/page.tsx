@@ -25,7 +25,7 @@ export default async function ExhibitionSingle({ params }: { params: { slug: str
               </section>}
               {!post.slide && post.cover_art &&
               <Image 
-                className="mx-auto max-h-[40rem] w-full md:max-w-[40rem] object-contain" 
+                className="mx-auto max-h-[40rem] w-full md:max-w-[40rem] object-contain mt-5" 
                 src={post.cover_art} 
                 alt={post.title.rendered} 
                 width="500" 
