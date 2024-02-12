@@ -13,6 +13,10 @@ export default async function ExhibitionArchive() {
       featuredImage = "/favicon.ico"
       noImage = true
     }
+    featuredImage = featuredImage.replace('http://hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    featuredImage = featuredImage.replace('https://hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    featuredImage = featuredImage.replace('http://www.hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    featuredImage = featuredImage.replace('https://www.hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
     return(
       <div key={post.id} className="flex flex-col">
           <a href={`exhibitions/` + post.slug}>

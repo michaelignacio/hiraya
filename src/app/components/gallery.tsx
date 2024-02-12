@@ -18,7 +18,10 @@ export default function Gallery({ post } : { post: any}) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const allSlides = Object.values(post.slide || {}).map((slideItem, i) => {
     const slideDetails = Object.values(slideItem || {})
-    const slideSrc = slideDetails[0].replace('http://hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    let slideSrc = slideDetails[0].replace('http://hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    slideSrc = slideDetails[0].replace('https://hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
+    slideSrc = slideDetails[0].replace('http://www.hiraya.com/wp-content/uploads/','https://www..s3.ap-southeast-2.amazonaws.com/')
+    slideSrc = slideDetails[0].replace('https://www.hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
     return (
       <SwiperSlide key={i} id={'mainSlide'+i}>
         <Image 
