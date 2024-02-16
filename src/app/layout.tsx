@@ -24,18 +24,20 @@ export default function RootLayout({
             <Image src="https://www.hiraya.com/wp-content/uploads/2015/07/hiraya_logo.jpg" width="323" height="60" alt="Hiraya logo" />
           </Link>
           <ul className="gap-5 items-center hidden md:flex">
-            <Link href="/">About Us</Link>
-            <Link href="/exhibitions">Exhibitions</Link>
+            <Link className="underline" href="/">About Us</Link>
+            <Link className="underline" href="/exhibitions">Exhibitions</Link>
           </ul>
         </nav>
         {children}
-      </body>
 
-      <ul className="gap-5 mt-10 flex justify-center">
-        <Link className="underline" href="/">About Us</Link>
-        <Link className="underline" href="/exhibitions">Exhibitions</Link>
-      </ul>
-      <p className="text-center mb-10 mt-5">© 2024 Hiraya Gallery. All Rights Reserved.</p>
+        <nav className="mt-10">
+          <ul className="gap-5 flex justify-center">
+            <Link className="underline" href="/">About Us</Link>
+            <Link className="underline" href="/exhibitions">Exhibitions</Link>
+          </ul>
+        </nav>
+        <p className="text-center mb-10 mt-5">© 2024 Hiraya Gallery. All Rights Reserved.</p>
+      </body>
     </html>
   );
 }
