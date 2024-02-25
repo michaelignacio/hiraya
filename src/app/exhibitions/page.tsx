@@ -2,7 +2,7 @@ import Image from "next/image";
 import data from '../data.json'
 
 export default async function ExhibitionArchive() {
-  const postHtml = data.map((post:any,i:number) => {
+  const postHtml = data.map((post:any, i:number) => {
     let featuredImage = ''
     let noImage = false
     if (post.cover_art) {
