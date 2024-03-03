@@ -4,6 +4,7 @@ import Overlay from './Overlay';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  children?: React.ReactNode; // Add this line to include children prop
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {

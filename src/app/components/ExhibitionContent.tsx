@@ -15,7 +15,7 @@ interface ExhibitionDetailsProps {
     artists?: string[];
     venue: string;
     notes?: string;
-    slide?: boolean;
+    slide?: any;
     cover_art?: string;
   };
 }
