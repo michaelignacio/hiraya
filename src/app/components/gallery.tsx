@@ -23,7 +23,6 @@ export default function Gallery({ post } : { post: any}) {
       <SwiperSlide key={i} id={'mainSlide'+i}>
         <Image 
           className="mx-auto my-auto max-h-[40vh] md:max-h-unset object-contain" 
-          onError={() => document.getElementById('mainSlide'+i)!.remove()}
           src={slideSrc} alt={post.title.rendered} 
           width="640"
           height="100"
@@ -34,13 +33,11 @@ export default function Gallery({ post } : { post: any}) {
   })
   const allThumbs = Object.values(post.slide || {}).map((slideItem, i) => {
     const slideDetails = Object.values(slideItem || {})
-    const slideSrc = slideDetails[0].replace('http://hiraya.com/wp-content/uploads/','https://hiraya.s3.ap-southeast-2.amazonaws.com/')
     return (
       <SwiperSlide key={i} id={'thumbSlide'+i}>
         <Image 
           className="rounded-xl size-14 md:size-20" 
-          onError={() => document.getElementById('thumbSlide'+i)!.remove()}
-          src={slideSrc} 
+          src={slideDetails[0]} 
           alt={post.title.rendered}
           width="100"
           height="100"
