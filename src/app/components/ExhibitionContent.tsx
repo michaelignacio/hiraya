@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Gallery from './Gallery';
 import Contact from './Contact';
 import Modal from './Modal';
 import Overlay from './Overlay';
+import Gallery from './Gallery';
 
 interface ExhibitionDetailsProps {
   post: {
