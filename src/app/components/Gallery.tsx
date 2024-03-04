@@ -22,7 +22,7 @@ export default function Gallery({ post } : { post: any}) {
     return (
       <SwiperSlide key={i} id={'mainSlide'+i}>
         <Image 
-          className="mx-auto my-auto max-h-[40vh] md:max-h-unset object-contain" 
+          className="mx-auto my-auto h-[40vh] object-contain" 
           src={slideSrc} alt={post.title.rendered} 
           width="640"
           height="100"
