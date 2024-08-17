@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from 'next/link'
 import { Inter } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
 import "./globals.css";
 import MobileNav from './components/MobileNav';
 
@@ -39,6 +40,7 @@ export default function RootLayout({
           </ul>
         </nav>
         <p className="text-center mb-10 mt-5 text-gray-700">© 2024 Hiraya Gallery. All Rights Reserved.</p>
+        <Analytics />
       </body>
     </html>
   );
